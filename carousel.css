@@ -221,9 +221,9 @@ body {
 
             .mapouter {
               position: relative;
-              width: 100%;
+              width: 30%;
               height: 0;
-              padding-bottom: 56.25%; /* Ratio 16:9 */
+              padding-bottom: 25.25%; /* Ratio 16:9 */
           }
           
           .gmap_canvas {
