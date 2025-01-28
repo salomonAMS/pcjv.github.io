@@ -360,7 +360,7 @@ body {
 /*animation des effets d'affichage des éléments des featurette premier venant de la droite, le second de la gauche et le troisième de la droite*/
 .animate-featurette {
   opacity: 0;
-  transition: all 1s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .animate-featurette.from-right {
