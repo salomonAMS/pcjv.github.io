@@ -294,7 +294,7 @@ body {
       padding: 2rem;
       margin: 2rem 0;
   }
-  
+  /* effet d'ombre et de lumière des featurettes */
   .featurette:hover {
       transform: translateY(-5px);
       box-shadow: 8px 8px 20px rgba(0,0,0,0.15),
@@ -318,7 +318,7 @@ body {
     height: 0;
     overflow: hidden;
 }
-
+/*animation du déroulement du ménu et adaptation au écran mobile*/
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
@@ -340,4 +340,38 @@ body {
         padding-left: 1rem;
     }
 }
-      
+ /*animation des effets d'affichage des éléments des placeholders*/     
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.animate-from-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+/*animation des effets d'affichage des éléments des featurette premier venant de la droite, le second de la gauche et le troisième de la droite*/
+.animate-featurette {
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+.animate-featurette.from-right {
+  transform: translateX(100px);
+}
+
+.animate-featurette.from-left {
+  transform: translateX(-100px);
+}
+
+.animate-featurette.show {
+  opacity: 1;
+  transform: translateX(0);
+}
