@@ -218,7 +218,7 @@ body {
                  object-fit: contain; /* Retour à 'contain' pour mobile */
               }
             }
-
+            /* code pour gérer le map*/
             .mapouter {
               position: relative;
               width: 100%;
@@ -262,7 +262,8 @@ body {
                   margin-bottom: 3rem; /* Assure un espace après la carte */
               }
           }
-          .navbar-collapse {
+
+        .navbar-collapse {
             display: flex;
             justify-content: center;
         }
@@ -276,6 +277,7 @@ body {
           padding: 1rem;
           list-style: none;
       }
+      /* gestion des élément après le titre nos domaine...*/
       .content-list {
         margin-top: 2rem;
         padding: 0;
@@ -290,20 +292,20 @@ body {
         padding: 0.5rem;
         margin-bottom: 0.5rem;
         border-left: 3px solid #8e0de4;
-        background-color: #f8f9fa;
+        background-color: #fffcfc;
         transition: all 0.3s ease;
     }
     
     .list-item:hover {
         transform: translateX(10px);
-        background-color: #e9ecef;
+        background-color: #ffffff;
     }
     
     .list-item svg {
         flex-shrink: 0;
         margin-left: 1rem;
     }
-
+    /* gestion des feature (qui somme nous etc..)*/
     .featurette {
       background: linear-gradient(145deg, #ffffff, #f0f0f0);
       box-shadow: 5px 5px 15px rgba(0,0,0,0.1),
@@ -313,11 +315,14 @@ body {
       padding: 2rem;
       margin: 2rem 0;
   }
-  /* effet d'ombre et de lumière des featurettes */
+
+
+
+  /* effet d'ombre et de lumière des featurettes*/
   .featurette:hover {
       transform: translateY(-5px);
       box-shadow: 8px 8px 20px rgba(0,0,0,0.15),
-                  -8px -8px 20px rgba(255,255,255,0.9);
+                  -4px -4px 10px rgba(255,255,255,0.9);
       background: linear-gradient(145deg, #f8f9fa, #ffffff);
   }
   
@@ -337,6 +342,7 @@ body {
     height: 0;
     overflow: hidden;
 }
+
 /*animation du déroulement du ménu et adaptation au écran mobile*/
 .dropdown:hover .dropdown-menu {
     opacity: 1;
@@ -359,6 +365,9 @@ body {
         padding-left: 1rem;
     }
 }
+
+
+
  /*animation des effets d'affichage des éléments des placeholders*/     
 .animate-on-scroll {
   opacity: 0;
@@ -376,6 +385,9 @@ body {
   opacity: 1;
   transform: translate(0, 0);
 }
+
+
+
 /*animation des effets d'affichage des éléments des featurette premier venant de la droite, le second de la gauche et le troisième de la droite*/
 .animate-featurette {
   opacity: 0;
@@ -398,16 +410,23 @@ body {
   margin-bottom: 0 !important; /* Supprime les marges inutiles */
   padding-bottom: 0 !important; /* Supprime les rembourrages inutiles */
 }
+
+
+
+/* pied de page */
 .footer {
     position: relative;
     width: 100%;
     padding: 2rem 1rem; /* Ajuste les espacements */
-    background-color: #9958fc;
+    background: linear-gradient(180deg, rgba(135, 46, 164, 0.8) 0%, rgb(130, 61, 233) 100%);
     margin-top: 4rem; /* Pousse le footer vers le bas sans chevaucher */
     text-align: center;
     color: white;
     margin-bottom: 0; /* Supprime toute marge sous le footer */
     padding-bottom: 0; /* Supprime le padding */
+    font-size: 0.875rem;
+    z-index: 10;
+    overflow: hidden;
 }
 
 
@@ -418,4 +437,24 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Priorise le contenu en haut */
+  background-color: #f0f0f0;
+
+}
+
+
+.purple-text /* couleur des grand titre*/
+{
+  color: rgb(123, 12, 123); /* Ou utilisez #8A2BE2 pour un violet spécifique */
+}
+.navbar .nav-link {
+  font-size: 18px; /* Taille de police ajustée pour les liens de navigation */
+  color: #8e0de4;
+}
+
+.navbar-brand {
+  font-size: 20px; /* Taille de police ajustée pour la marque */
+}
+
+.dropdown-menu .dropdown-item {
+  font-size: 16px; /* Taille de police ajustée pour les éléments du menu déroulant */
 }
