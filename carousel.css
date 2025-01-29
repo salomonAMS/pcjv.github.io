@@ -222,8 +222,9 @@ body {
             .mapouter {
               position: relative;
               width: 100%;
-              height: 150%;
-              padding-bottom: 30.25%; /* Ratio 16:9 */
+              height: auto; /* Change de "0" à "auto" */
+              padding-bottom: 56.25%; /* Ratio 16:9 par défaut */
+              margin-bottom: 2rem; /* Espace pour éviter qu'elle colle en bas */
           }
           
           .gmap_canvas {
@@ -240,8 +241,26 @@ body {
               position: absolute;
               top: 0;
               left: 0;
-              width: 100% !important;
-              height: 100% !important;
+              width: 100%;
+              height: 100%;
+              margin-bottom: 0; /* Enlève la marge inutile */
+          }
+          
+          /* Grand écran */
+          @media (min-width: 1024px) {
+              .mapouter {
+                  width: 80%;
+                  margin: 0 auto;
+                  padding-bottom: 50%; /* Ajuster le ratio pour grands écrans */
+              }
+          }
+          
+          /* Correction pour éviter que la carte empêche l'affichage correct sur mobile */
+          @media (max-width: 768px) {
+              .mapouter {
+                  padding-bottom: 60%; /* Ratio ajusté pour les petits écrans */
+                  margin-bottom: 3rem; /* Assure un espace après la carte */
+              }
           }
           .navbar-collapse {
             display: flex;
@@ -375,16 +394,20 @@ body {
   opacity: 1;
   transform: translateX(0);
 }
+.d-flex {
+  margin-bottom: 0 !important; /* Supprime les marges inutiles */
+  padding-bottom: 0 !important; /* Supprime les rembourrages inutiles */
+}
 .footer {
-  position: relative;
-  width: 100%;
-  margin: 0;
-  padding: 2rem 0 0 0; /* Réduit de 4rem à 2rem */
-  overflow: hidden;
-  background-color: #9958fc;
-  margin-bottom: 0;
-  margin-top: 4rem;
-  max-height: 450px; /* Définir une hauteur minimale plus petite */
+    position: relative;
+    width: 100%;
+    padding: 2rem 1rem; /* Ajuste les espacements */
+    background-color: #9958fc;
+    margin-top: 4rem; /* Pousse le footer vers le bas sans chevaucher */
+    text-align: center;
+    color: white;
+    margin-bottom: 0; /* Supprime toute marge sous le footer */
+    padding-bottom: 0; /* Supprime le padding */
 }
 
 
@@ -394,4 +417,5 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start; /* Priorise le contenu en haut */
 }
