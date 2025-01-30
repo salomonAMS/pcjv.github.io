@@ -212,12 +212,21 @@ body {
             /* Tablette et mobile */
           @media (max-width: 991px) {
               .carousel-item {
-                  height: 60vh;
+                  height: 70vh;
               }
               .carousel-item img {
                  object-fit: contain; /* Retour à 'contain' pour mobile */
               }
+              
             }
+            /* Très petits écrans */
+          @media (max-width: 480px) {
+            .carousel-item {
+                height: 75vh; /* Encore un peu plus grand pour éviter que l’image soit coupée */
+            }
+
+          
+          }
             /* code pour gérer le map*/
             .mapouter {
               position: relative;
@@ -458,3 +467,63 @@ body {
 .dropdown-menu .dropdown-item {
   font-size: 16px; /* Taille de police ajustée pour les éléments du menu déroulant */
 }
+
+/* Assurer que la légende reste bien positionnée */
+.carousel-caption {
+  position: absolute;
+  bottom: 10%; /* Ajuste la position verticale */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; /* Empêche le texte d’être trop large */
+  text-align: center; /* Centrer le texte */
+  background: rgba(0, 0, 0, 0.5); /* Ajoute un fond sombre semi-transparent */
+  padding: 10px;
+  border-radius: 8px;
+}
+/* responsive des écritures sur le carrousel*/
+/* Ajustements pour les tablettes */
+@media (max-width: 768px) {
+  .carousel-caption {
+    bottom: 25%; /* Monte légèrement la légende */
+    width: 90%; /* Augmente la largeur pour s’adapter */
+  }
+
+  .carousel-caption h1 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+}
+
+/* Ajustements pour les petits téléphones */
+@media (max-width: 480px) {
+  .carousel-caption {
+    bottom: 35%; /* Monte encore plus la légende */
+    width: 95%;
+    padding: 5px;
+  }
+
+  .carousel-caption h1 {
+    font-size: 1.2rem;
+    font-style: bold;
+  }
+
+  .carousel-caption p {
+    font-size: 0.9rem;
+  }
+}
+/* Assurer que la légende reste bien positionnée 
+.carousel-caption {
+  position: ;
+  bottom: 10%; /* Ajuste la position verticale 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; /* Empêche le texte d’être trop large 
+  text-align: center; /* Centrer le texte 
+  background: rgba(0, 0, 0, 0.5); /* Ajoute un fond sombre semi-transparent 
+  padding: 10px;
+  border-radius: 8px;
+}
+*/
