@@ -6,9 +6,15 @@ body {
   padding-top: 3rem;
   padding-bottom: 3rem;
   color: rgb(var(--bs-tertiary-color-rgb));
-  font-family: 'circula', ;
-  }
-
+  font-family: 'circula', sans-serif;
+  background-color: #ffffff; /* Fond clair par défaut */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -16,18 +22,30 @@ body {
 /* Carousel base class */
 .carousel {
   margin-bottom: 4rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
+
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   bottom: 3rem;
   z-index: 10;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 8px;
 }
 
 /* Declare heights because of positioning of img element */
 .carousel-item {
   height: 32rem;
+  position: relative;
 }
-
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -44,7 +62,6 @@ body {
 }
 /* rtl:end:ignore */
 
-
 /* Featurettes
 ------------------------- */
 
@@ -56,8 +73,8 @@ body {
 /* rtl:begin:remove */
 .featurette-heading {
   letter-spacing: -.05rem;
+  margin-top: 1rem;
 }
-
 /* rtl:end:remove */
 
 /* RESPONSIVE CSS
@@ -78,306 +95,302 @@ body {
 
 @media (min-width: 62em) {
   .featurette-heading {
-    margin-top: 7rem;
+    margin-top: 1rem;
   }
 }
-        /*
-        header img {
-          width: 100px; /* Ajustez la largeur selon vos besoins 
-          height: 100PX; /* Préserve les proportions de l'image 
-          object-fit: contain; /* Garantit que l'image est couverte 
-          border-radius: none; /* Rondir les coins de l'image 
-          margin: 20px; /* Ajoutez un espace autour de l'image 
-          width: 100px;
-          margin: 0 auto; /* Centre horizontalement le logo 
-          .navbar-logo */
-      .navbar-logo
-       {
-         height: 100px; /* Ajustez la hauteur selon vos besoins */
-        width: auto; /* Maintient le ratio d'aspect de l'image */
-        margin-left: 100px; /* Ajustez la marge selon vos besoins */
-        margin-right: 20px; /* Ajustez la marge droite selon vos besoins */
-          }
-          
-          .about-us-overlay {
-            position: relative;
-            margin-top: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            max-width: 900px;
-            background-color: transparent;
-            padding: 20px;
-            text-align: center;
-            z-index: 10;
-        }
-        
-        @media (max-width: 768px) {
-            .about-us-overlay {
-                margin-top: -40px;
-                width: 90%;
-                padding: 15px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .about-us-overlay {
-                margin-top: -30px;
-                width: 95%;
-                padding: 10px;
-            }
-        }
-        
-        
-          
-         
-          .marketing {
-              margin-top: 100px; /* Ajustez cette valeur pour créer de l'espace entre les sections */
-              }
-              .marketing h3 {
-                margin-top: -5rem;
-                margin-bottom: 6rem;
-                text-align: center;
-                font-weight: bold;
-            }
-        .large-margin-top {
-             margin-top: 10rem; /* Ajustez cette valeur pour une marge supérieure plus grande */
-             }
-           /* Styles pour le carousel */
-        .carousel {
-            
-              width: 100%;
-              margin: 0;
-              padding: 0;
-          }
 
-        .carousel-item {
-          height: calc(100vh - 76px); /* Hauteur totale moins la navbar */
-          min-height: 600px;
-          max-height: 900px;
-             position: relative;
-          }
-
-        .carousel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Pour que l'image couvre tout l'espace */
-           
-          }
-            /* Contrôle individuel des images pour grands écrans */
-            @media (min-width: 1200px) {
-               
-
-                /* Deuxième slide */
-                .carousel-item.slide2 img {
-                    object-position: top ;
-                    object-fit: cover;
-                }
-
-          
-                /* Quatrième slide */
-                .carousel-item.slide4 img {
-                    object-position: top;
-                }
-
-                /* Cinquième slide */
-                .carousel-item.slide5 img {
-                    object-position: top;
-                }
-                /* Sixième slide */
-                .carousel-item.slide6 img {
-                    object-position: top;
-                }
-            }
-              /* Grand écran 
-            @media (min-width: 1200px) {
-                .carousel-item {
-                  height: 90vh; /* Utilisation de la hauteur viewport 
-                  max-height: 900px;
-                }
-                .carousel-item img {
-                width: 1440px;
-               height: 713px;
-               object-fit: justify; /* Utilisation de 'contain' pour les images 
-                }       
-            }
- 
-            /* Écran moyen */
-            @media (max-width: 1199px) and (min-width: 992px) {
-                .carousel-item {
-                    height: 80vh;
-                }
-            }
-
-            /* Tablette et mobile */
-          @media (max-width: 991px) {
-              .carousel-item {
-                  height: 70vh;
-              }
-              .carousel-item img {
-                 object-fit: contain; /* Retour à 'contain' pour mobile */
-              }
-              
-            }
-            /* Très petits écrans */
-          @media (max-width: 480px) {
-            .carousel-item {
-                height: 75vh; /* Encore un peu plus grand pour éviter que l’image soit coupée */
-            }
-
-          
-          }
-            /* code pour gérer le map*/
-            .mapouter {
-              position: relative;
-              width: 100%;
-              height: auto; /* Change de "0" à "auto" */
-              padding-bottom: 56.25%; /* Ratio 16:9 par défaut */
-              margin-bottom: 2rem; /* Espace pour éviter qu'elle colle en bas */
-          }
-          
-          .gmap_canvas {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              overflow: hidden;
-              background: none !important;
-          }
-          
-          .gmap_iframe {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              margin-bottom: 0; /* Enlève la marge inutile */
-          }
-          
-          /* Grand écran */
-          @media (min-width: 1024px) {
-              .mapouter {
-                  width: 80%;
-                  margin: 0 auto;
-                  padding-bottom: 50%; /* Ajuster le ratio pour grands écrans */
-              }
-          }
-          
-          /* Correction pour éviter que la carte empêche l'affichage correct sur mobile */
-          @media (max-width: 768px) {
-              .mapouter {
-                  padding-bottom: 60%; /* Ratio ajusté pour les petits écrans */
-                  margin-bottom: 3rem; /* Assure un espace après la carte */
-              }
-          }
-
-        .navbar-collapse {
-            display: flex;
-            justify-content: center;
-        }
-        
-        .navbar-nav {
-            margin: 0 auto;
-            margin-left: 100px;
-        }
-        ul {
-          margin-top: 1rem;
-          padding: 1rem;
-          list-style: none;
-      }
-      /* gestion des élément après le titre nos domaine...*/
-      .content-list {
-        margin-top: 2rem;
-        padding: 0;
-        list-style: none;
-        width: 100%;
-    }
-    
-    .list-item {
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        padding: 0.5rem;
-        margin-bottom: 0.5rem;
-        border-left: 3px solid #8e0de4;
-        background-color: #fffcfc;
-        transition: all 0.3s ease;
-    }
-    
-    .list-item:hover {
-        transform: translateX(10px);
-        background-color: #ffffff;
-    }
-    
-    .list-item svg {
-        flex-shrink: 0;
-        margin-left: 1rem;
-    }
-    /* gestion des feature (qui somme nous etc..)*/
-    .featurette {
-      background: linear-gradient(145deg, #ffffff, #f0f0f0);
-      box-shadow: 5px 5px 15px rgba(0,0,0,0.1),
-                  -5px -5px 15px rgba(255,255,255,0.8);
-      border-radius: 15px;
-      transition: all 0.3s ease;
-      padding: 2rem;
-      margin: 2rem 0;
-  }
-
-
-
-  /* effet d'ombre et de lumière des featurettes*/
-  .featurette:hover {
-      transform: translateY(-5px);
-      box-shadow: 8px 8px 20px rgba(0,0,0,0.15),
-                  -4px -4px 10px rgba(255,255,255,0.9);
-      background: linear-gradient(145deg, #f8f9fa, #ffffff);
-  }
-  
-  .featurette-image {
-      box-shadow: inset 5px 5px 15px rgba(0,0,0,0.1),
-                  inset -5px -5px 15px rgba(255,255,255,0.8);
-      transition: all 0.3s ease;
-  }.dropdown-menu {
-    display: block;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease-in-out;
-    position: absolute;
-    margin-top: 0;
-    padding: 0;
-    height: 0;
-    overflow: hidden;
+/*
+header img {
+  width: 100px; /* Ajustez la largeur selon vos besoins 
+  height: 100PX; /* Préserve les proportions de l'image 
+  object-fit: contain; /* Garantit que l'image est couverte 
+  border-radius: none; /* Rondir les coins de l'image 
+  margin: 20px; /* Ajoutez un espace autour de l'image 
+  width: 100px;
+  margin: 0 auto; /* Centre horizontalement le logo 
+  .navbar-logo */
+.navbar-logo {
+  height: 100px; /* Ajustez la hauteur selon vos besoins */
+  width: auto; /* Maintient le ratio d'aspect de l'image */
+  margin-left: 100px; /* Ajustez la marge selon vos besoins */
+  margin-right: 20px; /* Ajustez la marge droite selon vos besoins */
 }
 
-/*animation du déroulement du ménu et adaptation au écran mobile*/
-.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    height: auto;
-    padding: 0.5rem 0;
+.about-us-overlay {
+  position: relative;
+  margin-top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 900px;
+  background-color: transparent;
+  padding: 20px;
+  text-align: center;
+  z-index: 10;
 }
 
 @media (max-width: 768px) {
-    .dropdown-menu {
-        position: static;
-        background: transparent;
-        border: none;
-        padding: 0;
-        margin: 0;
-    }
-    
-    .dropdown:hover .dropdown-menu {
-        padding-left: 1rem;
-    }
+  .about-us-overlay {
+    margin-top: -40px;
+    width: 90%;
+    padding: 15px;
+  }
 }
 
+@media (max-width: 576px) {
+  .about-us-overlay {
+    margin-top: -30px;
+    width: 95%;
+    padding: 10px;
+  }
+}
 
+.marketing {
+  margin-top: 100px; /* Ajustez cette valeur pour créer de l'espace entre les sections */
+}
 
- /*animation des effets d'affichage des éléments des placeholders*/     
+.marketing h3 {
+  margin-top: -5rem;
+  margin-bottom: 6rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.large-margin-top {
+  margin-top: 10rem; /* Ajustez cette valeur pour une marge supérieure plus grande */
+}
+
+/* Styles pour le carousel */
+.carousel {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-item {
+  height: calc(100vh - 76px); /* Hauteur totale moins la navbar */
+  min-height: 600px;
+  max-height: 900px;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Pour que l'image couvre tout l'espace */
+}
+
+/* Contrôle individuel des images pour grands écrans */
+@media (min-width: 1200px) {
+  /* Deuxième slide */
+  .carousel-item.slide2 img {
+    object-position: top;
+    object-fit: cover;
+  }
+  /* Quatrième slide */
+  .carousel-item.slide4 img {
+    object-position: top;
+  }
+  /* Cinquième slide */
+  .carousel-item.slide5 img {
+    object-position: top;
+  }
+  /* Sixième slide */
+  .carousel-item.slide6 img {
+    object-position: top;
+  }
+}
+
+/* Grand écran 
+@media (min-width: 1200px) {
+  .carousel-item {
+    height: 90vh; /* Utilisation de la hauteur viewport 
+    max-height: 900px;
+  }
+  .carousel-item img {
+    width: 1440px;
+    height: 713px;
+    object-fit: justify; /* Utilisation de 'contain' pour les images 
+  }       
+}
+*/
+
+/* Écran moyen */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .carousel-item {
+    height: 80vh;
+  }
+}
+
+/* Tablette et mobile */
+@media (max-width: 991px) {
+  .carousel-item {
+    height: 70vh;
+  }
+  .carousel-item img {
+    object-fit: contain; /* Retour à 'contain' pour mobile */
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+  .carousel-item {
+    height: 75vh; /* Encore un peu plus grand pour éviter que l’image soit coupée */
+  }
+}
+
+/* code pour gérer le map */
+.mapouter {
+  position: relative;
+  width: 100%;
+  height: auto; /* Change de "0" à "auto" */
+  padding-bottom: 56.25%; /* Ratio 16:9 par défaut */
+  margin-bottom: 2rem; /* Espace pour éviter qu'elle colle en bas */
+}
+
+.gmap_canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: none !important;
+}
+
+.gmap_iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0; /* Enlève la marge inutile */
+}
+
+/* Grand écran */
+@media (min-width: 1024px) {
+  .mapouter {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 50%; /* Ajuster le ratio pour grands écrans */
+  }
+}
+
+/* Correction pour éviter que la carte empêche l'affichage correct sur mobile */
+@media (max-width: 768px) {
+  .mapouter {
+    padding-bottom: 60%; /* Ratio ajusté pour les petits écrans */
+    margin-bottom: 3rem; /* Assure un espace après la carte */
+  }
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-nav {
+  margin: 0 auto;
+  margin-left: 100px;
+}
+
+ul {
+  margin-top: 1rem;
+  padding: 1rem;
+  list-style: none;
+}
+
+/* gestion des élément après le titre nos domaine... */
+.content-list {
+  margin-top: 2rem;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-left: 3px solid #8e0de4;
+  background-color: #fffcfc;
+  transition: all 0.3s ease;
+}
+
+.list-item:hover {
+  transform: translateX(10px);
+  background-color: #ffffff;
+}
+
+.list-item svg {
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+/* gestion des feature (qui somme nous etc..) */
+.featurette {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.1),
+              -5px -5px 15px rgba(255,255,255,0.8);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+/* effet d'ombre et de lumière des featurettes */
+.featurette:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 20px rgba(0,0,0,0.15),
+              -4px -4px 10px rgba(255,255,255,0.9);
+  background: linear-gradient(145deg, #f8f9fa, #ffffff);
+}
+
+.featurette-image {
+  box-shadow: inset 5px 5px 15px rgba(0,0,0,0.1),
+              inset -5px -5px 15px rgba(255,255,255,0.8);
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  margin-top: 0;
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* animation du déroulement du menu et adaptation au écran mobile */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  height: auto;
+  padding: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    padding-left: 1rem;
+  }
+}
+
+/* animation des effets d'affichage des éléments des placeholders */     
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(50px);
@@ -395,9 +408,7 @@ body {
   transform: translate(0, 0);
 }
 
-
-
-/*animation des effets d'affichage des éléments des featurette premier venant de la droite, le second de la gauche et le troisième de la droite*/
+/* animation des effets d'affichage des éléments des featurette premier venant de la droite, le second de la gauche et le troisième de la droite */
 .animate-featurette {
   opacity: 0;
   transition: all 0.5s ease-out;
@@ -415,77 +426,65 @@ body {
   opacity: 1;
   transform: translateX(0);
 }
+
 .d-flex {
-  margin-bottom: 0 !important; /* Supprime les marges inutiles */
-  padding-bottom: 0 !important; /* Supprime les rembourrages inutiles */
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
-
-
 
 /* pied de page */
 .footer {
-    position: relative;
-    width: 100%;
-    padding: 2rem 1rem; /* Ajuste les espacements */
-    background: linear-gradient(180deg, rgba(135, 46, 164, 0.8) 0%, rgb(130, 61, 233) 100%);
-    margin-top: 4rem; /* Pousse le footer vers le bas sans chevaucher */
-    text-align: center;
-    color: white;
-    margin-bottom: 0; /* Supprime toute marge sous le footer */
-    padding-bottom: 0; /* Supprime le padding */
-    font-size: 0.875rem;
-    z-index: 10;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 2rem 1rem;
+  background: linear-gradient(180deg, rgba(135, 46, 164, 0.8) 0%, rgb(130, 61, 233) 100%);
+  margin-top: 4rem;
+  text-align: center;
+  color: white;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 0.875rem;
+  z-index: 10;
+  overflow: hidden;
 }
 
-
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Priorise le contenu en haut */
-  background-color: #f0f0f0;
-
+/* couleur des grand titre */
+.purple-text {
+  color: rgb(123, 12, 123);
 }
 
-
-.purple-text /* couleur des grand titre*/
-{
-  color: rgb(123, 12, 123); /* Ou utilisez #8A2BE2 pour un violet spécifique */
-}
 .navbar .nav-link {
-  font-size: 18px; /* Taille de police ajustée pour les liens de navigation */
+  font-size: 18px;
   color: #8e0de4;
 }
 
 .navbar-brand {
-  font-size: 20px; /* Taille de police ajustée pour la marque */
+  font-size: 20px;
 }
 
 .dropdown-menu .dropdown-item {
-  font-size: 16px; /* Taille de police ajustée pour les éléments du menu déroulant */
+  font-size: 16px;
 }
 
 /* Assurer que la légende reste bien positionnée */
 .carousel-caption {
   position: absolute;
-  bottom: 10%; /* Ajuste la position verticale */
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%; /* Empêche le texte d’être trop large */
-  text-align: center; /* Centrer le texte */
-  background: rgba(0, 0, 0, 0.5); /* Ajoute un fond sombre semi-transparent */
+  width: 80%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
   padding: 10px;
   border-radius: 8px;
 }
-/* responsive des écritures sur le carrousel*/
+
+/* responsive des écritures sur le carrousel */
 /* Ajustements pour les tablettes */
 @media (max-width: 768px) {
   .carousel-caption {
-    bottom: 25%; /* Monte légèrement la légende */
-    width: 100%; /* Augmente la largeur pour s’adapter */
+    bottom: 25%;
+    width: 100%;
   }
 
   .carousel-caption h1 {
@@ -500,7 +499,7 @@ body {
 /* Ajustements pour les petits téléphones */
 @media (max-width: 480px) {
   .carousel-caption {
-    bottom: 35%; /* Monte encore plus la légende */
+    bottom: 35%;
     width: 95%;
     padding: 5px;
   }
@@ -515,3 +514,60 @@ body {
   }
 }
 
+/* MODE SOMBRE 
+/* Utilisation de la media query pour s'adapter aux préférences système 
+@media (prefers-color-scheme: dark) 
+{
+
+  /* Global 
+  body {
+    background-color: #1c1c1e;
+    color: #fefefe;
+  }
+
+  /* Carousel caption : on renforce le fond sombre pour une meilleure lisibilité 
+  .carousel-caption {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fefefe;
+  }
+
+  /* Featurettes 
+  .featurette {
+    background: linear-gradient(145deg, #2c2c2e, #3a3a3c);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5),
+                -5px -5px 15px rgba(255,255,255,0.1);
+  }
+
+  .featurette:hover {
+    background: linear-gradient(145deg, #3a3a3c, #2c2c2e);
+    box-shadow: 8px 8px 20px rgba(0,0,0,0.6),
+                -4px -4px 10px rgba(255,255,255,0.1);
+  }
+
+  /* Navbar et textes spécifiques 
+  .navbar .nav-link {
+    color: #bb86fc;
+  }
+
+  .purple-text {
+    color: #bb86fc;
+  }
+
+  /* Listes et éléments similaires 
+  .list-item {
+    background-color: #2a2a2a;
+    border-left-color: #bb86fc;
+  }
+
+  .list-item:hover {
+    background-color: #333333;
+  }
+
+  /* Footer 
+  .footer {
+    background: linear-gradient(180deg, rgba(80, 0, 120, 0.8) 0%, rgb(70, 50, 140) 100%);
+    color: #fefefe;
+  }
+
+  /* Vous pouvez ajouter d'autres ajustements pour d'autres éléments si nécessaire *
+}
