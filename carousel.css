@@ -563,3 +563,6 @@ h2 {
 .rounded-circle { /* Or a more specific selector if needed */
   border: 2px solid rgb(226, 193, 238);
 }
+.fw-normal {
+  margin-top: 2rem;
+}
