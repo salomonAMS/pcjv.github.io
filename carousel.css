@@ -306,17 +306,19 @@ ul {
   padding: 0;
   list-style: none;
   width: 100%;
+  
 }
 
 .list-item {
   display: flex;
-  align-items: center;
-  justify-content: start;
+  align-items: center; /* Centrer verticalement */
+  justify-content: flex-start;  /* Alignement du texte à gauche */
   padding: 0.5rem;
   margin-bottom: 0.5rem;
-  border-left: 3px solid #8e0de4;
+  border-left: 3px solid #8e0de4;  /* Bordure gauche uniforme */
   background-color: #fffcfc;
   transition: all 0.3s ease;
+  min-height: 60px;  /* Hauteur minimale pour uniformiser les éléments */
 }
 
 .list-item:hover {
@@ -328,6 +330,12 @@ ul {
   flex-shrink: 0;
   margin-left: 1rem;
 }
+
+.list-item span {
+  flex-grow: 1;  /* Permet au texte de s'étirer dans l'espace restant */
+  text-align: center;  /* Centrer le texte horizontalement */
+}
+
 
 /* gestion des feature (qui somme nous etc..) */
 .featurette {
@@ -354,18 +362,7 @@ ul {
   transition: all 0.3s ease;
 }
 
-.dropdown-menu {
-  display: block;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.3s ease-in-out;
-  position: absolute;
-  margin-top: 0;
-  padding: 0;
-  height: 0;
-  overflow: hidden;
-}
+
 
 /* animation du déroulement du menu et adaptation au écran mobile */
 .dropdown:hover .dropdown-menu {
@@ -394,12 +391,6 @@ ul {
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(50px);
-  transition: all 1s ease;
-}
-
-.animate-from-left {
-  opacity: 0;
-  transform: translateX(-100px);
   transition: all 1s ease;
 }
 
@@ -514,37 +505,34 @@ ul {
   }
 }
 
-/* MODE SOMBRE 
-/* Utilisation de la media query pour s'adapter aux préférences système 
-@media (prefers-color-scheme: dark) 
-{
-
-  /* Global 
+/* Mode sombre lorsque l'attribut data-bs-theme est "dark" */
+[data-bs-theme="dark"] {
+  /* Global */
   body {
     background-color: #1c1c1e;
     color: #fefefe;
   }
 
-  /* Carousel caption : on renforce le fond sombre pour une meilleure lisibilité 
+  /* Carousel caption : on renforce le fond sombre pour une meilleure lisibilité */
   .carousel-caption {
     background: rgba(0, 0, 0, 0.7);
     color: #fefefe;
   }
 
-  /* Featurettes 
+  /* Featurettes */
   .featurette {
     background: linear-gradient(145deg, #2c2c2e, #3a3a3c);
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.5),
-                -5px -5px 15px rgba(255,255,255,0.1);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5),
+                -5px -5px 15px rgba(255, 255, 255, 0.1);
   }
 
   .featurette:hover {
     background: linear-gradient(145deg, #3a3a3c, #2c2c2e);
-    box-shadow: 8px 8px 20px rgba(0,0,0,0.6),
-                -4px -4px 10px rgba(255,255,255,0.1);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.6),
+                -4px -4px 10px rgba(255, 255, 255, 0.1);
   }
 
-  /* Navbar et textes spécifiques 
+  /* Navbar et textes spécifiques */
   .navbar .nav-link {
     color: #bb86fc;
   }
@@ -553,7 +541,7 @@ ul {
     color: #bb86fc;
   }
 
-  /* Listes et éléments similaires 
+  /* Listes et éléments similaires */
   .list-item {
     background-color: #2a2a2a;
     border-left-color: #bb86fc;
@@ -563,11 +551,12 @@ ul {
     background-color: #333333;
   }
 
-  /* Footer 
+  /* Footer */
   .footer {
     background: linear-gradient(180deg, rgba(80, 0, 120, 0.8) 0%, rgb(70, 50, 140) 100%);
     color: #fefefe;
   }
-
-  /* Vous pouvez ajouter d'autres ajustements pour d'autres éléments si nécessaire *
+}   
+h2 {
+  font-size: 1.5rem; /* Ajuster selon les besoins */
 }
