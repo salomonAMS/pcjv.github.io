@@ -112,7 +112,7 @@ header img {
 .navbar-logo {
   height: 100px; /* Ajustez la hauteur selon vos besoins */
   width: auto; /* Maintient le ratio d'aspect de l'image */
-  margin-left: 100px; /* Ajustez la marge selon vos besoins */
+  margin-left: 10px; /* Ajustez la marge selon vos besoins */
   margin-right: 20px; /* Ajustez la marge droite selon vos besoins */
 }
 
@@ -390,7 +390,7 @@ ul {
 /* animation des effets d'affichage des éléments des placeholders */     
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(0);
   transition: all 1s ease;
 }
 
@@ -565,4 +565,41 @@ h2 {
 }
 .fw-normal {
   margin-top: 2rem;
+}
+html, body {
+  background: #000;
+}
+
+.hb {
+  width: 40px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Style pour le bouton hamburger */
+.menu-toggle {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  cursor: pointer;
+  width: 35px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Supprimer l'outline et le box-shadow */
+.menu-toggle:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Afficher la barre de navigation lorsque le volet est ouvert */
+.collapse.show {
+  display: block;
 }
